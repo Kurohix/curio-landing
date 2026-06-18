@@ -4,9 +4,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Curio — Lanza el dado. Descubre algo nuevo.</title>
-  <meta name="description" content="Curio es la app de microlearning donde lanzas un dado y descubres un dato fascinante. 10 tiradas al día, 6 categorías, completamente gratis."/>
+  <meta name="description" content="Curio es una app de datos curiosos en español donde lanzas un dado, descubres curiosidades reales y respondes un quiz rápido. Gratis, diaria y pensada para Latinoamérica."/>
+  <meta name="robots" content="index,follow,max-image-preview:large"/>
+  <meta name="theme-color" content="#F3F1EC"/>
+  <link rel="canonical" href="https://curiolanding.vercel.app/"/>
   <meta property="og:title" content="Curio — Lanza el dado. Descubre algo nuevo."/>
-  <meta property="og:description" content="Más de 1000 curiosidades reales. 6 géneros. Una pregunta después de cada tirada. Completamente gratis."/>
+  <meta property="og:description" content="Más de 1000 curiosidades reales en español. 6 géneros, una pregunta después de cada tirada y acceso gratis todos los días."/>
   <meta property="og:url" content="https://curiolanding.vercel.app/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:image" content="https://curiolanding.vercel.app/og-image.png"/>
@@ -14,7 +17,7 @@
   <meta property="og:image:height" content="630"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Curio — Lanza el dado. Descubre algo nuevo."/>
-  <meta name="twitter:description" content="Más de 1000 curiosidades reales. 6 géneros. Una sorpresa cada vez."/>
+  <meta name="twitter:description" content="Más de 1000 curiosidades reales en español. 6 géneros, un quiz rápido y una sorpresa cada vez."/>
   <meta name="twitter:image" content="https://curiolanding.vercel.app/og-image.png"/>
   <link rel="icon" type="image/svg+xml" href="Curio idle.svg"/>
   <link rel="apple-touch-icon" href="Curio idle.svg"/>
@@ -401,6 +404,54 @@
     .cta-btn:hover { opacity:.88; transform:translateY(-2px); }
     .cta-note { font-size:12px; color:rgba(255,255,255,.28); margin-top:18px; letter-spacing:.02em; }
 
+    /* ── FAQ ── */
+    .faq-section {
+      background: var(--white);
+    }
+    .faq-list {
+      margin-top: 56px;
+      border-top: 1.5px solid var(--cream-border);
+    }
+    .faq-item {
+      border-bottom: 1.5px solid var(--cream-border);
+      padding: 24px 0;
+    }
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      list-style: none;
+      cursor: pointer;
+    }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-a {
+      max-width: 72ch;
+      margin-top: 12px;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+    .faq-chev {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border: 1.5px solid var(--cream-border);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .2s var(--ease-out-expo), border-color .2s ease;
+    }
+    .faq-item[open] .faq-chev {
+      transform: rotate(180deg);
+      border-color: #94a3b8;
+    }
+
     /* ── FOOTER ── */
     footer {
       border-top:1px solid var(--cream-border); padding:36px 48px;
@@ -528,9 +579,34 @@
       }
       .demo-wrap { grid-template-columns:1fr; gap:40px; }
       .states-grid { grid-template-columns:repeat(3,1fr); }
+      .faq-q { font-size: 18px; }
       footer { padding:28px 20px; flex-direction:column; align-items:flex-start; }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Curio",
+    "url": "https://curiolanding.vercel.app/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "es",
+    "description": "Curio es una app de datos curiosos en español donde lanzas un dado, descubres curiosidades reales y respondes un quiz rápido.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Datos curiosos diarios",
+      "Quiz integrado",
+      "Colección personal",
+      "6 géneros de curiosidades",
+      "PWA gratis"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -543,6 +619,7 @@
   <div class="nav-links">
     <a href="#como-funciona" class="nav-link">Cómo funciona</a>
     <a href="#generos" class="nav-link">Géneros</a>
+    <a href="#faq" class="nav-link">FAQ</a>
     <a href="https://curio-app-mu.vercel.app/" class="nav-btn">Jugar →</a>
   </div>
 </nav>
@@ -554,10 +631,10 @@
     <div class="hero-left">
       <div class="hero-eyebrow">
         <div class="hero-eyebrow-dot"></div>
-        10 descubrimientos gratis cada día
+        App de datos curiosos en español
       </div>
       <h1>Lanza el dado.<br/>Descubre algo nuevo.</h1>
-      <p class="hero-sub">Más de 1000 curiosidades reales esperando dentro del dado. Historia, ciencia, naturaleza, arte, cultura y tecnología. Una tirada, una sorpresa.</p>
+      <p class="hero-sub">Más de 1000 curiosidades reales esperando dentro del dado. Ciencia, historia, naturaleza, arte, cultura y tecnología. Una tirada, una sorpresa, un quiz breve y una razón para volver mañana.</p>
       <div class="hero-cta-row">
         <a href="https://curio-app-mu.vercel.app/" class="btn-ink">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.5" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.5" fill="currentColor"/></svg>
@@ -628,11 +705,11 @@
 
 <!-- CÓMO FUNCIONA -->
 <section class="section" id="como-funciona">
-  <div class="section-inner">
-    <div class="reveal">
-      <span class="section-label">Cómo funciona</span>
-      <h2 class="section-h">Tan simple como<br/>lanzar un dado.</h2>
-      <p class="section-sub">Empieza sin registrarte. Si quieres guardar tus descubrimientos, puedes crear una cuenta gratis más adelante.</p>
+    <div class="section-inner">
+      <div class="reveal">
+        <span class="section-label">Cómo funciona</span>
+        <h2 class="section-h">Tan simple como<br/>lanzar un dado.</h2>
+      <p class="section-sub">Empieza sin registrarte. Si quieres guardar tus descubrimientos, puedes crear una cuenta gratis más adelante y mantener tu colección entre dispositivos.</p>
     </div>
     <div class="how-grid">
       <div class="how-card reveal rd1">
@@ -669,7 +746,7 @@
     <div class="reveal">
       <span class="section-label">Los géneros</span>
       <h2 class="section-h">Seis formas<br/>de sorprenderte.</h2>
-      <p class="section-sub">Nunca sabes qué saldrá en la próxima tirada. El dado decide. Tú descubres.</p>
+      <p class="section-sub">Nunca sabes qué saldrá en la próxima tirada. El dado decide. Tú descubres. Cada género está pensado para cubrir búsquedas de curiosidades evergreen en español.</p>
     </div>
 
     <div class="bento reveal rd1">
@@ -830,6 +907,36 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Preguntas frecuentes</span>
+      <h2 class="section-h">Lo básico,<br/>sin vueltas.</h2>
+      <p class="section-sub">Respuestas cortas para entender Curio rápido y para que Google entienda también de qué va esta app.</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item reveal rd1">
+        <summary class="faq-q">¿Qué es Curio? <span class="faq-chev">⌄</span></summary>
+        <p class="faq-a">Curio es una app de datos curiosos en español. Lanzas un dado y recibes una curiosidad real con un quiz breve. Está pensada para volver cada día y descubrir algo nuevo sin esfuerzo.</p>
+      </details>
+      <details class="faq-item reveal rd2">
+        <summary class="faq-q">¿Curio es gratis? <span class="faq-chev">⌄</span></summary>
+        <p class="faq-a">Sí. La versión actual es gratis y ofrece descubrimientos diarios. Más adelante puede existir una capa de pago para ampliar funciones, pero siempre habrá una parte gratuita para todo el mundo.</p>
+      </details>
+      <details class="faq-item reveal rd3">
+        <summary class="faq-q">¿Para quién está pensada? <span class="faq-chev">⌄</span></summary>
+        <p class="faq-a">Para personas curiosas de Latinoamérica y de cualquier país hispanohablante que quieran aprender algo rápido, compartirlo o volver mañana por otra sorpresa.</p>
+      </details>
+      <details class="faq-item reveal rd4">
+        <summary class="faq-q">¿Qué tipo de contenido tiene? <span class="faq-chev">⌄</span></summary>
+        <p class="faq-a">Curiosidades de ciencia, historia, naturaleza, arte, cultura y tecnología. También hay una categoría especial llamada Datos Perdidos, pensada para sorprender cuando el usuario ya conoce lo básico.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- CONOCE A CURIO -->
 <section class="section states-section">
   <div class="section-inner">
@@ -880,8 +987,50 @@
     <a href="https://www.tiktok.com/@curioislearning" target="_blank" rel="noopener">@curioislearning</a>
     <a href="#como-funciona">Cómo funciona</a>
     <a href="#generos">Géneros</a>
+    <a href="#faq">FAQ</a>
   </div>
 </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es Curio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Curio es una app de datos curiosos en español. Lanzas un dado y recibes una curiosidad real con un quiz breve."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Curio es gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La versión actual es gratis y ofrece descubrimientos diarios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Para quién está pensada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para personas curiosas de Latinoamérica y de cualquier país hispanohablante."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué tipo de contenido tiene?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Curiosidades de ciencia, historia, naturaleza, arte, cultura y tecnología, más una categoría especial de Datos Perdidos."
+      }
+    }
+  ]
+}
+</script>
 
 <script>
 const CATS = {
